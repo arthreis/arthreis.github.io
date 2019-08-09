@@ -1,0 +1,55 @@
+{
+    "person": {
+        "name":"Arthur",
+        "lastName": "Reis",
+        "middleName": "Rocha"        
+    },
+    "contact": {
+        "email": "arr90rj@gmail.com",
+        "phone": "(21) 97129-9133",
+        "linkedin": "linkedin.com/in/arthur-reis",
+        "location": "Rio de Janeiro / Brazil"
+    },
+    "experiences": [
+        {
+            "locale":"Stefanini",
+            "function": "Java Developer",
+            "period": "JUL/2012 - JAN/2014"
+        },
+        {
+            "locale":"Acol Consultoria & Sistemas",
+            "function": "Java Developer",
+            "period": "JAN/2014 - ABR/2014"
+        },
+        {
+            "locale":"webamericas",
+            "function": "Javascript Developer",
+            "period": "JUL/2014 - FEV/2015"
+        },
+        {
+            "locale":"Metatron",
+            "function": "Fullstack Developer",
+            "period": "FEV/2015 - ABR/2018"
+        },
+        {
+            "locale":"Radix Engenharia e Software",
+            "function": "Fullstack Developer",
+            "period": "MAI/2018 - ATUAL"
+        }
+    ],
+    "skills":[
+        {
+            "Java":"8",
+            "AngularJS":"8",
+            "Node":"6",
+            "React":"6",
+            "NestJS":"6",
+            "SQL":"7",
+            "MongoDB":"6"
+        }
+    ],
+    "education":{
+        "locale": "Centro Universitário Carioca",
+        "status": "in progress"
+    }
+}
