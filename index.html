@@ -1,82 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
         <title>Arthur Rocha Reis</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
-        <link href="styles.css" rel="stylesheet">
-        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-        <script defer src="script.js"></script>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet'>
+        <link href='./styles.css' rel='stylesheet'>
+        <script defer src='https://use.fontawesome.com/releases/v5.3.1/js/all.js'></script>
+        <script defer src='./script.js'></script>
     </head>
     <body>
-        <section class="hero">
-            <div class="hero-body">
-                <div class="container">
-                <h1 class="title">
-                    Arthur Rocha Reis
-                </h1>
-                <h2 class="subtitle">
-                    Fullstack Developer at <strong>Radix Engenharia e Software</strong>!
-                </h2>
+        <section class='hero'>
+            <div class='hero-body'>
+                <div class="columns">
+                    <div class="column">
+                            <div class='container'>
+                                    <h1 class='title'>
+                                        I'm <span defer id='fullname'>FULL_NAME</span>
+                                    </h1>
+                                    <h2 class='subtitle'>
+                                        <span id='current-function'>CURRENT_FUNCTION</span> at <strong id='current-job'>CURRENT_JOB</strong> !
+                                    </h2>
+                                </div>
+                    </div>
+                    <div class="column">
+                            <a href="assets/doc/resume.pdf" target="_blank" class="button is-medium">
+                                <span class="icon is-medium">
+                                    <i class="fas fa-file-pdf"></i>
+                                </span>
+                                <span>Resume</span>
+                            </a>
+                    </div>
+                    <div class="column">
+                        <div id="person-contact">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <h1>Title</h1>
-            <div class="columns">
-                
-                <div class="column is-half">
-                    <h3>Skills</h3>
-                    <ul>
-                        <li>
-                            <span>1</span>
-                            <progress class="progress is-link" value="15" max="100">15%</progress>
-                        </li>
-                        <li>
-                            <span>2</span>
-                            <progress class="progress is-link" value="30" max="100">30%</progress>
-                        </li>
-                        <li>
-                            <span>3</span>
-                            <progress class="progress is-link" value="60" max="100">60%</progress>
-                        </li>
-                        <li>
-                            <span>4</span>
-                            <progress class="progress is-link" value="80" max="100">80%</progress>
-                        </li>
-                    </ul>
+        <section class='section'>
+            <div class='columns'>
+
+                <div class='column'>
+                    <div class='is-half'>
+                        <span class='subtitle'>Skills</span>
+                        <div id='skills'></div>
+                    </div>
                 </div>
-                backend
-                <div class="column is-half">
-                    <h3>Experience</h3>
-                    <div class="card">
-                        <div class="card-content">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-48x48">
-                                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4">Fullstack developer</p>
-                                    <p class="subtitle is-6">Radix Engenharia e Software</p>
-                                </div>
-                            </div>
-                        
-                            <div class="content">
-                                teste teste teste
-                                <br>
-                                <time datetime="2019-8-9">Maio/2018 - atual</time>
-                            </div>
-                        </div>
+
+                <div class='column'>
+                    <div class='is-half'>
+                        <span class='subtitle'>Experiences</span>
+                        <div id='experiences'></div>
                     </div>
                 </div>
 
             </div>
         </section>
-        
+
     </body>
 </html>
