@@ -6,6 +6,7 @@ function init(){
         console.log(info);
 
         loadPersonInfo(info.personInfo, info.experiences[info.experiences.length-1]);
+        loadPersonContact(info.contact);
         loadSkills(info.skills);
         loadExperiences(info.experiences);
     });
@@ -15,6 +16,7 @@ function loadJSON(callback) {
     var xhr = new XMLHttpRequest();
     xhr.overrideMimeType("aplication/json");
     xhr.open('GET', json, true);
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
     xhr.onreadystatechange = function () {
         if(xhr.readyState == 4 && xhr.status == 200){
             callback(xhr.responseText);
@@ -34,6 +36,40 @@ function loadPersonInfo(info, current) {
         let fullname = names.firstname + ' ' + names.middlename + ' ' + names.lastname;
         return fullname;
     }
+}
+
+function loadPersonContact(contact) {
+
+    let personContact = document.getElementById('person-contact');
+
+    let email = document.createElement("span");
+    email.setAttribute('class', 'email');
+    email.innerText = contact.email;
+    email.append(document.createElement('br'));
+
+    let phone = document.createElement("span");
+    phone.setAttribute('class', 'phone');
+    phone.innerText = contact.phone;
+    phone.append(document.createElement('br'));
+
+    let linkedin = document.createElement("span");
+    let link = document.createElement("a");
+    linkedin.setAttribute('class', 'linkedin');
+    linkedin.appendChild(link);
+    link.setAttribute('href', contact.linkedin);
+    link.setAttribute('target', '_blank');
+    link.innerText = contact.linkedin;
+    linkedin.append(document.createElement('br'));
+
+    let location = document.createElement("span");
+    location.setAttribute('class', 'location');
+    location.innerText = contact.location;
+    location.append(document.createElement('br'));
+
+    personContact.appendChild(email);
+    personContact.appendChild(phone);
+    personContact.appendChild(linkedin);
+    personContact.appendChild(location);
 }
 
 function loadSkills(skills) {
@@ -117,5 +153,4 @@ function loadExperiences(experiences) {
 
 }
 
-console.log("initing");
 init();
