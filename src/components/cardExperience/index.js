@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Experience from "./styles";
 
 export default class CardExperience extends Component {
     constructor(props) {
@@ -13,10 +14,11 @@ export default class CardExperience extends Component {
         const { experience } = this.state;
 
         return (
-            <div key={experience.id}>
-                <span>{experience.name}</span><br/>
-                <br/>
-            </div>
+            <Experience>
+                <span>{experience.locale}</span>   <br />
+                <span>{experience.function}</span> <br />
+                <span>{experience.period}</span>   <br />
+            </Experience>
         );
     }
 }

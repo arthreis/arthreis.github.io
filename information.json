@@ -10,6 +10,10 @@
         "linkedin": "linkedin.com/in/arthur-reis",
         "location": "Rio de Janeiro / Brazil"
     },
+    "education":{
+        "locale": "Centro Universitário Carioca",
+        "status": "in progress"
+    },
     "experiences": [
         {
             "id": "1",
@@ -55,9 +59,6 @@
         {"name":"NestJS",    "value":"6"},
         {"name":"SQL",       "value":"7"},
         {"name":"MongoDB",   "value":"6"}
-    ],
-    "education":{
-        "locale": "Centro Universitário Carioca",
-        "status": "in progress"
-    }
+    ]
+
 }
