@@ -10,6 +10,11 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
+    html {
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
     html, body, #root {
         height: 100%;
     }

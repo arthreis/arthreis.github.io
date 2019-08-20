@@ -10,8 +10,8 @@ const Experience = styled.div`
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
-    margin: 10px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px 15px;
 
         &:hover {
             transform: scale(1.2);

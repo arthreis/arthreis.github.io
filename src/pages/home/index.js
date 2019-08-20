@@ -35,7 +35,7 @@ export default class Home extends Component {
                 <Header />
 
                 <Content>
-                    <Cards color={'color1'}>
+                    <Cards color={'default'}>
                         <h1>Skills</h1>
                         {
                             skills.map(skill => (
@@ -44,7 +44,7 @@ export default class Home extends Component {
                         }
                     </Cards>
 
-                    <Cards color={'color2'}>
+                    <Cards color={'default'}>
                         <h1>Experiences</h1>
                         {
                             experiences.map(experience => (

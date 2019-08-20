@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import { Skill, Dot } from './styles';
+import { Skill } from './styles';
+import Dots from "./components/dots";
 
 export default class cardSkill extends Component {
 
@@ -18,7 +19,7 @@ export default class cardSkill extends Component {
         return (
             <Skill>
                 <span>{ skill.name } </span> <br />
-                <span>{ skill.value } </span> <br />
+                <Dots times={skill.value}></Dots>
             </Skill>
         );
     }

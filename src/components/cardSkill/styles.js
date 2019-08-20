@@ -3,29 +3,19 @@ import styled from "styled-components";
 export const Skill = styled.div`
     border-radius: 3px;
     transition: background-color 0.15s ease;
-    background: #7289da;
+    background-color: rgba(255, 255, 255, 0.2);
     border: 0;
     color: #FFF;
-    font-size: 18px;
+    font-size: 16px;
     padding: 0 10px;
-    text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
 
-    margin: 10px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
 
         &:hover {
             background: yellow;
             opacity: 0.6;
-
         }
-`;
-
-export const Dot = styled.div`
-    height: 25px;
-    width: 25px;
-    background-color: #2929b8;
-    border-radius: 50%;
-    display: inline-block;
 `;

@@ -2,10 +2,7 @@ import styled, { css } from "styled-components";
 
 const colors = {
     default: css`
-        background: #353940;
-        &:hover {
-            background: #5f73bc;
-        }
+        background: none;
     `,
     danger: css`
         background: #e04848;
@@ -21,10 +18,9 @@ const colors = {
         }
     `,
     color1: css`
-        background: #845;
-        color: #666;
+        background: #353940;
         &:hover {
-            background: #999;
+            background: #5f73bc;
         }
     `,
     color2: css`
@@ -58,7 +54,6 @@ export const Container = styled.div`
     border: 0;
     color: #FFF;
     font-size: 12px;
-    text-transform: uppercase;
     font-weight: 700;
 
     grid-template-rows: 20vh 75vh 5vh;
@@ -73,12 +68,9 @@ export const Cards = styled.div`
     border: 0;
     color: #FFF;
     font-size: 12px;
-    text-transform: uppercase;
     font-weight: 700;
 
-    /*
     ${props => colors[props.color || 'default']}
-    */
 
 `;
 
