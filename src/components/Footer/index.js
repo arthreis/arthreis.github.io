@@ -3,11 +3,11 @@ import React from 'react';
 import { Container } from './styles';
 
 const Footer = () => {
-    return (
-        <Container>
-            <span>FOOTER</span>
-        </Container>
-    )
+  return (
+    <Container>
+      <span>ReactJS</span>
+    </Container>
+  )
 };
 
 export default Footer;

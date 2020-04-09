@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { service } from '../../services/service';
 
@@ -9,54 +9,42 @@ import Footer from "../../components/Footer";
 
 import { Container, Cards, Content } from "./styles";
 
-export default class Home extends Component {
+export default function Home() {
 
-    state = {
-        experiences: [],
-        skills: [],
-    }
+  const [experiences, setExperiences] = useState([]);
+  const [skills, setSkills] = useState([]);
 
-    componentDidMount() {
-        this.loadExperiences();
-    }
+  useEffect(() => {
+    setExperiences(service.getExperiences());
+    setSkills(service.getSkills());
+  }, []);
 
-    loadExperiences = () => {
-        const experiences = service.getExperiences();
-        const skills = service.getSkills();
-        this.setState({ experiences: experiences });
-        this.setState({ skills: skills });
-    }
+  return (
+    <Container>
+      <Header />
 
-    render() {
-        const { experiences } = this.state;
-        const { skills } = this.state;
-        return (
-            <Container>
-                <Header />
+      <Content>
+        <Cards color={'default'}>
+          <h1>Skills</h1>
+          {
+            skills.map(skill => (
+              <CardSkill key={skill.id} skill={skill} />
+            ))
+          }
+        </Cards>
 
-                <Content>
-                    <Cards color={'default'}>
-                        <h1>Skills</h1>
-                        {
-                            skills.map(skill => (
-                                <CardSkill key={skill.id} skill={skill} />
-                            ))
-                        }
-                    </Cards>
+        <Cards color={'default'}>
+          <h1>Experiences</h1>
+          {
+            experiences.map(experience => (
+              <CardExperience key={experience.id} experience={experience} />
+            ))
+          }
+        </Cards>
+      </Content>
 
-                    <Cards color={'default'}>
-                        <h1>Experiences</h1>
-                        {
-                            experiences.map(experience => (
-                                <CardExperience key={experience.id} experience={experience} />
-                            ))
-                        }
-                    </Cards>
-                </Content>
+      <Footer />
 
-                <Footer />
-
-            </Container>
-        );
-    }
+    </Container>
+  );
 }

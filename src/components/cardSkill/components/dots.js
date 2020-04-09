@@ -15,4 +15,4 @@ const Dots = ({times}) => {
   )
 }
 
-export default Dots
+export default Dots;

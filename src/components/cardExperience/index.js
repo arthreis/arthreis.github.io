@@ -1,24 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Experience from "./styles";
 
-export default class CardExperience extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            experience: props.experience,
-        }
-    }
-
-    render() {
-        const { experience } = this.state;
-
-        return (
-            <Experience>
-                <span>{experience.locale}</span>   <br />
-                <span>{experience.function}</span> <br />
-                <span>{experience.period}</span>   <br />
-            </Experience>
-        );
-    }
+export default function CardExperience ({experience}) {
+  return (
+    <Experience>
+      <div>{experience.locale}</div>
+      <div>{experience.function}</div>
+      <div>{experience.period}</div>
+    </Experience>
+  );
 }

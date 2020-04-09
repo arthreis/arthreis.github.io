@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container } from './styles';
 import Contact from "./components/contact";
@@ -6,30 +6,24 @@ import MainInfo from "./components/mainInfo";
 
 import { service } from "./../../services/service";
 
-export default class Header extends Component {
-    state = {
-        personInfo: {},
-        contact: {}
-    }
-    componentDidMount(){
-        this.buscaInfo();
-    }
+export default function Header() {
 
-    buscaInfo = async () => {
-        const data = await service.getPersonInformations();
-        console.log(data);
-        this.setState({personInfo: data.personInfo});
-        this.setState({contact: data.contact});
-    }
+  const [personInfo, setPersonInfo] = useState({});
+  const [contact, setContact] = useState({});
 
-    render() {
-        const { personInfo, contact } = this.state;
+  useEffect(() => {
+    (async () => {
+      const data = await service.getPersonInformations();
+      console.log('data', data);
+      setPersonInfo(data.personInfo);
+      setContact(data.contact);
+    })();
+  }, []);
 
-        return (
-            <Container>
-                <MainInfo info={personInfo} />
-                <Contact contact={contact} />
-            </Container>
-        );
-    }
+  return (
+    <Container>
+      <MainInfo info={personInfo} />
+      <Contact contact={contact} />
+    </Container>
+  );
 }
