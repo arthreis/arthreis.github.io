@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 import { service } from '../../services/service';
 
-import CardExperience from '../../components/cardExperience';
-import CardSkill from "../../components/cardSkill";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import { Header, Footer, CardExperience, CardSkill } from '../../components';
 
-import { Container, Cards, Content } from "./styles";
+import { Container, SkillsContainer, ExperiencesContainer, Content } from "./styles";
 
 export default function Home() {
 
@@ -24,23 +21,33 @@ export default function Home() {
       <Header />
 
       <Content>
-        <Cards color={'default'}>
-          <h1>Skills</h1>
-          {
-            skills.map(skill => (
-              <CardSkill key={skill.id} skill={skill} />
-            ))
-          }
-        </Cards>
 
-        <Cards color={'default'}>
-          <h1>Experiences</h1>
-          {
-            experiences.map(experience => (
-              <CardExperience key={experience.id} experience={experience} />
-            ))
-          }
-        </Cards>
+        <div>
+          <div style={{marginLeft: '5%',}}><h1>Skills</h1></div>
+          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
+            <SkillsContainer color={'default'} style={{width: '90%',}}>
+              {
+                skills.map(skill => (
+                  <CardSkill key={skill.id} skill={skill} />
+                ))
+              }
+            </SkillsContainer>
+          </div>
+        </div>
+
+        <div>
+          <div style={{marginLeft: '5%'}}><h1>Experiences</h1></div>
+          <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
+            <ExperiencesContainer color={'default'} style={{width: '90%',}}>
+              {
+                experiences.map(experience => (
+                  <CardExperience key={experience.id} experience={experience} />
+                ))
+              }
+            </ExperiencesContainer>
+          </div>
+        </div>
+
       </Content>
 
       <Footer />

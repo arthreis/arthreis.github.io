@@ -56,17 +56,30 @@ export const Container = styled.div`
   font-size: 12px;
   font-weight: 700;
 
-  grid-template-rows: 20vh 75vh 5vh;
+  grid-template-rows: 15vh 80vh 5vh;
   grid-template-areas: "h h"
                        "c c"
                        "f f";
 `;
 
-export const Cards = styled.div`
+export const SkillsContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border-radius: 3px;
   transition: background-color 0.15s ease;
   border: 0;
-  color: #FFF;
+  font-size: 12px;
+  font-weight: 700;
+
+  ${props => colors[props.color || 'default']}
+`;
+
+export const ExperiencesContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 3px;
+  transition: background-color 0.15s ease;
+  border: 0;
   font-size: 12px;
   font-weight: 700;
 
@@ -77,4 +90,5 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-area: c;
+  overflow: auto;
 `;

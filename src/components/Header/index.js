@@ -14,7 +14,6 @@ export default function Header() {
   useEffect(() => {
     (async () => {
       const data = await service.getPersonInformations();
-      console.log('data', data);
       setPersonInfo(data.personInfo);
       setContact(data.contact);
     })();
@@ -22,8 +21,13 @@ export default function Header() {
 
   return (
     <Container>
-      <MainInfo info={personInfo} />
-      <Contact contact={contact} />
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center',marginLeft: '2.5%', marginRight: '2.5%'}}>
+        <div style={{display: 'flex', }}>
+          <MainInfo info={personInfo} />
+          {/* <button>Resume</button> */}
+        </div>
+        <Contact contact={contact} />
+      </div>
     </Container>
   );
 }

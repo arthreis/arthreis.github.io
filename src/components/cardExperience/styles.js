@@ -9,9 +9,12 @@ const Experience = styled.div`
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 700;
-  cursor: pointer;
-  margin: 5px;
-  padding: 5px 15px;
+  cursor: default;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  height: 70px;
+  display: flex;
+  align-items: center;
 
   &:hover {
       transform: scale(1.2);
