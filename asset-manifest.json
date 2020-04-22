@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/arthreis.github.io/static/js/main.9f2a2d7e.chunk.js",
-    "main.js.map": "/arthreis.github.io/static/js/main.9f2a2d7e.chunk.js.map",
-    "runtime~main.js": "/arthreis.github.io/static/js/runtime~main.72fda198.js",
-    "runtime~main.js.map": "/arthreis.github.io/static/js/runtime~main.72fda198.js.map",
-    "static/js/2.dd066378.chunk.js": "/arthreis.github.io/static/js/2.dd066378.chunk.js",
-    "static/js/2.dd066378.chunk.js.map": "/arthreis.github.io/static/js/2.dd066378.chunk.js.map",
-    "index.html": "/arthreis.github.io/index.html",
-    "precache-manifest.6b8d4417c6977eb0f0492f4222a8150e.js": "/arthreis.github.io/precache-manifest.6b8d4417c6977eb0f0492f4222a8150e.js",
-    "service-worker.js": "/arthreis.github.io/service-worker.js"
+    "main.js": "/static/js/main.509de628.chunk.js",
+    "main.js.map": "/static/js/main.509de628.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.16791e53.js",
+    "runtime~main.js.map": "/static/js/runtime~main.16791e53.js.map",
+    "static/js/2.001a5149.chunk.js": "/static/js/2.001a5149.chunk.js",
+    "static/js/2.001a5149.chunk.js.map": "/static/js/2.001a5149.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6d001e29ba28d5bbb6271d7deb5e3fd9.js": "/precache-manifest.6d001e29ba28d5bbb6271d7deb5e3fd9.js",
+    "service-worker.js": "/service-worker.js"
   }
 }
