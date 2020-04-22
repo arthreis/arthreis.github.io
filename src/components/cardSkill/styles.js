@@ -7,12 +7,9 @@ export const Skill = styled.div`
   border: 0;
   color: #FFF;
   font-size: 16px;
-  padding: 0 10px;
   font-weight: 700;
   cursor: default;
   height: 70px;
-  margin-bottom: 10px;
-  margin-right: 10px;
   padding-left: 10px;
   display: flex;
   align-items: center;

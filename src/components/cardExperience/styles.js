@@ -10,14 +10,13 @@ const Experience = styled.div`
   text-transform: uppercase;
   font-weight: 700;
   cursor: default;
-  margin-bottom: 10px;
   padding-left: 10px;
   height: 70px;
   display: flex;
   align-items: center;
 
   &:hover {
-      transform: scale(1.2);
+      transform: scale(1.05);
   }
 `;
 

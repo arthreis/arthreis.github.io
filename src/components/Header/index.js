@@ -10,24 +10,22 @@ export default function Header() {
 
   const [personInfo, setPersonInfo] = useState({});
   const [contact, setContact] = useState({});
+  const [lastFunction, setLastFunction] = useState('');
 
   useEffect(() => {
     (async () => {
-      const data = await service.getPersonInformations();
-      setPersonInfo(data.personInfo);
-      setContact(data.contact);
+      const { personInfo, contact } = await service.getPersonInformations();
+      const experiences = await service.getExperiences();
+      setPersonInfo(personInfo);
+      setContact(contact);
+      setLastFunction(experiences[experiences.length-1].function);
     })();
   }, []);
 
   return (
     <Container>
-      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center',marginLeft: '2.5%', marginRight: '2.5%'}}>
-        <div style={{display: 'flex', }}>
-          <MainInfo info={personInfo} />
-          {/* <button>Resume</button> */}
-        </div>
-        <Contact contact={contact} />
-      </div>
+      <MainInfo info={personInfo} lastFunction={lastFunction} />
+      <Contact contact={contact} />
     </Container>
   );
 }

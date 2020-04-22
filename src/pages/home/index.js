@@ -23,7 +23,7 @@ export default function Home() {
       <Content>
 
         <div>
-          <div style={{marginLeft: '5%',}}><h1>Skills</h1></div>
+          <div style={{marginLeft: '5%', marginBottom: '2%'}}><h1>Skills</h1></div>
           <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
             <SkillsContainer color={'default'} style={{width: '90%',}}>
               {
@@ -36,7 +36,7 @@ export default function Home() {
         </div>
 
         <div>
-          <div style={{marginLeft: '5%'}}><h1>Experiences</h1></div>
+          <div style={{marginLeft: '5%', marginBottom: '2%'}}><h1>Experiences</h1></div>
           <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
             <ExperiencesContainer color={'default'} style={{width: '90%',}}>
               {

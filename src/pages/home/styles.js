@@ -52,11 +52,10 @@ export const Container = styled.div`
   grid-template-columns: 1fr 1fr;
   transition: background-color 0.15s ease;
   border: 0;
-  color: #FFF;
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: 700;
 
-  grid-template-rows: 15vh 80vh 5vh;
+  grid-template-rows: 20vh 75vh 5vh;
   grid-template-areas: "h h"
                        "c c"
                        "f f";
@@ -64,7 +63,8 @@ export const Container = styled.div`
 
 export const SkillsContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
   border-radius: 3px;
   transition: background-color 0.15s ease;
   border: 0;
@@ -77,6 +77,7 @@ export const SkillsContainer = styled.div`
 export const ExperiencesContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  grid-gap: 10px;
   border-radius: 3px;
   transition: background-color 0.15s ease;
   border: 0;
@@ -88,7 +89,7 @@ export const ExperiencesContainer = styled.div`
 
 export const Content = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-area: c;
   overflow: auto;
 `;

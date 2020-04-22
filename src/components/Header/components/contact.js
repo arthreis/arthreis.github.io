@@ -3,10 +3,14 @@ import React from 'react';
 const Contact = ({contact}) => {
   return (
     <div style={style}>
-      <div>{contact.email}</div>
-      <div>{contact.phone}</div>
-      <a href={'https://www.' + contact.linkedin}>{contact.linkedin}</a>
-      <div>{contact.location}</div>
+      <div>
+        <div>{contact.email}</div>
+        <div>{contact.phone}</div>
+        <div>
+          <a href={'https://www.' + contact.linkedin}>{contact.linkedin}</a>
+        </div>
+        <div>{contact.location}</div>
+      </div>
     </div>
   );
 };
@@ -14,7 +18,10 @@ const Contact = ({contact}) => {
 export default Contact;
 
 const style = {
-  justifyContent: 'center',
   fontWeight: '500',
-  fontSize: '15px'
+  fontSize: '15px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-end',
+  marginRight: '5%',
 };
