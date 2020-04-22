@@ -19,7 +19,7 @@ export default Contact;
 
 const style = {
   fontWeight: '500',
-  fontSize: '15px',
+  fontSize: '1.5rem',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-end',

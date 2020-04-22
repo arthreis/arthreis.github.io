@@ -6,7 +6,7 @@ export const Skill = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
   border: 0;
   color: #FFF;
-  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 700;
   cursor: default;
   height: 70px;

@@ -36,9 +36,9 @@ export default MainInfo;
 
 const nameStyle = {
   fontWeight: '700',
-  fontSize: '1.5rem'
+  fontSize: '2.5rem'
 };
 const functionStyle = {
   fontWeight: '700',
-  fontSize: '1.2rem'
+  fontSize: '2.2rem'
 };

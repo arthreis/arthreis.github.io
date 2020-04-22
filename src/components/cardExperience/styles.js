@@ -6,7 +6,7 @@ const Experience = styled.div`
 
   border: 0;
   color: #FFF;
-  font-size: 14px;
+  font-size: 1.4rem;
   text-transform: uppercase;
   font-weight: 700;
   cursor: default;
