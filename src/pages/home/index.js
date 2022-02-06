@@ -4,7 +4,7 @@ import { service } from '../../services/service';
 
 import { Header, Footer, CardExperience, CardSkill } from '../../components';
 
-import { Container, SkillsContainer, ExperiencesContainer, Content } from "./styles";
+import * as S from "./styles";
 
 export default function Home() {
 
@@ -17,41 +17,41 @@ export default function Home() {
   }, []);
 
   return (
-    <Container>
+    <S.Container>
       <Header />
 
-      <Content>
+      <S.Content>
 
         <div>
           <div style={{marginLeft: '5%', marginBottom: '2%'}}><h1>Skills</h1></div>
           <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
-            <SkillsContainer color={'default'} style={{width: '90%',}}>
+            <S.SkillsContainer color={'default'} style={{width: '90%',}}>
               {
                 skills.map(skill => (
                   <CardSkill key={skill.id} skill={skill} />
                 ))
               }
-            </SkillsContainer>
+            </S.SkillsContainer>
           </div>
         </div>
 
         <div>
           <div style={{marginLeft: '5%', marginBottom: '2%'}}><h1>Experiences</h1></div>
           <div style={{display: 'flex', flexDirection: "column", alignItems: 'center'}}>
-            <ExperiencesContainer color={'default'} style={{width: '90%',}}>
+            <S.ExperiencesContainer color={'default'} style={{width: '90%',}}>
               {
                 experiences.map(experience => (
                   <CardExperience key={experience.id} experience={experience} />
                 ))
               }
-            </ExperiencesContainer>
+            </S.ExperiencesContainer>
           </div>
         </div>
 
-      </Content>
+      </S.Content>
 
       <Footer />
 
-    </Container>
+    </S.Container>
   );
 }

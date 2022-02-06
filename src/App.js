@@ -5,8 +5,8 @@ import GlobalStyle from './styles/global';
 function App() {
   return (
     <Fragment>
-      <Routes />
       <GlobalStyle />
+      <Routes />
     </Fragment>
   );
 }

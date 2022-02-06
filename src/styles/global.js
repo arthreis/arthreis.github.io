@@ -26,13 +26,13 @@ export default createGlobalStyle`
     font: 14px 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiase !important;
 
-    background: rgb(224,0,255);
+    /* background: rgb(224,0,255); */
     background: linear-gradient(315deg, rgba(224,0,255,1) 0%, rgba(253,29,29,1) 25%, rgba(252,176,69,1) 100%);
   }
 
-  ul {
+  /* ul {
     list-style: none;
-  }
+  } */
 
   input, button {
     font-family: 'Roboto', sans-serif;

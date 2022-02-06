@@ -38,7 +38,7 @@ export const service = {
       }
     ];
   },
-  getSkills(){
+  getSkills() {
     return [
       {"id": "1","name":"Java",         "value":"4"},
       {"id": "2","name":"AngularJS",    "value":"4"},
@@ -50,7 +50,7 @@ export const service = {
       {"id": "8","name":"NoSQL",        "value":"3"}
     ]
   },
-  getPersonInformations(){
+  getPersonInformations() {
     return {
       "personInfo": {
         "firstname":"Arthur",
@@ -65,11 +65,10 @@ export const service = {
       },
     }
   },
-  getEducation(){
+  getEducation() {
     return {
       "locale": "Centro Universitário Carioca",
       "status": "in progress"
     }
   }
-
 };
