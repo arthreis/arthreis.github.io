@@ -32,21 +32,6 @@ const colors = {
   `,
 };
 
-const sizes = {
-  small: css`
-    height: 28px;
-    font-size: 1.2rem;
-  `,
-  default: css`
-    height: 36px;
-    font-size: 1.4rem;
-  `,
-  big: css`
-    height: 44px;
-    font-size: 1.8rem;
-  `,
-};
-
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -55,7 +40,7 @@ export const Container = styled.div`
   font-size: 1rem;
   font-weight: 700;
 
-  grid-template-rows: 20vh 77vh 3vh;
+  grid-template-rows: 15vh 82vh 3vh;
   grid-template-areas: "h h"
                        "c c"
                        "f f";
@@ -92,4 +77,5 @@ export const Content = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-area: c;
   overflow: auto;
+  padding-bottom: 20px;
 `;

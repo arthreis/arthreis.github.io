@@ -5,9 +5,10 @@ export default function CardExperience ({experience}) {
   return (
     <Experience>
       <div>
-        <div>{experience.locale}</div>
-        <div>{experience.function}</div>
-        <div>{experience.period}</div>
+        <div className='locale'>{experience.locale}</div>
+        <div className='function'>{experience.function}</div>
+        <div className='description'>{experience.description}</div>
+        <div className='period'>{experience.period}</div>
       </div>
     </Experience>
   );
