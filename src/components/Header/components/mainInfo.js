@@ -2,26 +2,24 @@ import React from 'react';
 
 const MainInfo = ({ info, lastFunction }) => {
   return (
-    <div style={
-      {
+    <div
+      style={{
         display: 'flex',
         alignItems: 'center',
         marginLeft: '5%',
-      }
-    }>
+      }}
+    >
       <div>
         <img
-        src={'http://1.gravatar.com/avatar/d013f72b5df113ab423e5135bbc2b802'}
-        alt='profile'
-        height='70px'
-        width='70px'
-        style={
-          {
+          src={'http://1.gravatar.com/avatar/d013f72b5df113ab423e5135bbc2b802'}
+          alt='profile'
+          height='70px'
+          width='70px'
+          style={{
             borderRadius: 50,
             border: '5px solid',
             marginRight: '20px',
-          }
-        }
+          }}
         />
       </div>
       <div>

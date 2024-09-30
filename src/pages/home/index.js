@@ -5,16 +5,24 @@ import { service } from '../../services/service';
 import { Header, Footer, CardExperience, CardSkill } from '../../components';
 
 import * as S from "./styles";
+import { useLocation } from 'react-router';
 
 export default function Home() {
 
   const [experiences, setExperiences] = useState([]);
   const [skills, setSkills] = useState([]);
 
+  const { pathname } = useLocation();
+
   useEffect(() => {
-    setExperiences(service.getExperiences());
+    if (pathname === '/detailed') {
+      setExperiences(service.getExperiencesDetailed().reverse());
+    } else {
+      setExperiences(service.getExperiences().reverse());
+    }
     setSkills(service.getSkills());
-  }, []);
+
+  }, [pathname]);
 
   return (
     <S.Container>

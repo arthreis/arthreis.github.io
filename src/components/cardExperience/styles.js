@@ -7,16 +7,24 @@ const Experience = styled.div`
   border: 0;
   color: #FFF;
   font-size: 1.4rem;
-  text-transform: uppercase;
-  font-weight: 700;
   cursor: default;
   padding-left: 10px;
-  height: 70px;
   display: flex;
   align-items: center;
 
   &:hover {
       transform: scale(1.05);
+  }
+
+  .locale {
+    font-weight: 700;
+  }
+  .function {
+  }
+  .description {
+    font-weight: 400;
+  }
+  .period {
   }
 `;
 
