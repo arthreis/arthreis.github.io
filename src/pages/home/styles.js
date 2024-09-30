@@ -32,21 +32,6 @@ const colors = {
   `,
 };
 
-const sizes = {
-  small: css`
-    height: 28px;
-    font-size: 1.2rem;
-  `,
-  default: css`
-    height: 36px;
-    font-size: 1.4rem;
-  `,
-  big: css`
-    height: 44px;
-    font-size: 1.8rem;
-  `,
-};
-
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
