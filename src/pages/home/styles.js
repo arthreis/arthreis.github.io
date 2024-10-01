@@ -59,6 +59,17 @@ export const SkillsContainer = styled.div`
   ${props => colors[props.color || 'default']}
 `;
 
+export const GeneralSkillsContainer = styled.div`
+  display: grid;
+  grid-gap: 2px;
+  border-radius: 3px;
+  transition: background-color 0.15s ease;
+  border: 0;
+  font-size: 1.2rem;
+
+  ${props => colors[props.color || 'default']}
+`;
+
 export const ExperiencesContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;

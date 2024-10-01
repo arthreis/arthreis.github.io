@@ -184,6 +184,24 @@ export const service = {
       {"id": "8","name":"NoSQL",        "value":"3"},
     ]
   },
+  getGeneralSkills() {
+    return [
+      {"id": "1","name":"Spring (Boot, Data, Security)"},
+      {"id": "2","name":"Maven"},
+      {"id": "3","name":"Junit, Jest"},
+      {"id": "4","name":"Docker"},
+      {"id": "5","name":"CI/CD"},
+      {"id": "7","name":"Métodos ágeis (Kanban, Scrum)"},
+      {"id": "8","name":"Mobile (ReactNative, React+Webview, Angular)"},
+      {"id": "9","name":"Microfrontend"},
+      {"id": "10","name":"Microserviços"},
+      {"id": "11","name":"AWS (SES, EC2, S3, RDS)"},
+      {"id": "12","name":"Mensageria (Kafka)"},
+      {"id": "13","name":"MongoDB, Redis"},
+      {"id": "14","name":"Rest, GraphQL, SOAP, RPC, Websocket"},
+      {"id": "15","name":"Prisma, TypeORM, Hibernate"},
+    ]
+  },
   getPersonInformations() {
     return {
       "personInfo": {
@@ -206,5 +224,5 @@ export const service = {
       "period": "2020",
       "status": "finalizado",
     }
-  }
+  },
 };
