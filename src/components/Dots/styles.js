@@ -1,19 +1,22 @@
 import styled, { css } from "styled-components";
 
-export const Dot = styled.div`
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  display: inline-block;
-  margin: 2px;
-  ${props => colors[props.color || 'default']}
-`;
-
 const colors = {
   default: css`
-    background: linear-gradient(315deg, rgba(252,176,69,1) 0%, rgba(253,29,29,1) 25%, rgba(224,0,255,1) 100%);
+    background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+    box-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
   `,
   empty: css`
-    background: linear-gradient(315deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 100%);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.04);
   `
-}
+};
+
+export const Dot = styled.div`
+  height: 8px;
+  width: 18px;
+  border-radius: 1px;
+  display: inline-block;
+  margin-right: 4px;
+  transition: all 0.3s ease;
+  ${props => colors[props.color || 'default']}
+`;

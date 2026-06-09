@@ -1,11 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: #000;
+  background-color: #08090c;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   grid-area: f;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  font-family: 'Fira Code', monospace;
+  display: flex;
+  align-items: center;
+  padding: 0 4%;
+  height: 100%;
 
   div {
-    color: #0f0f0f;
+    width: 100%;
+    color: #4b5263 !important;
   }
 `;
