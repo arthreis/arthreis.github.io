@@ -69,9 +69,17 @@ export const service = {
         "id": "9",
         "locale":"Neoris",
         "function": "Fullstack Developer",
-        "period": "FEV/2018 - ABR/2024",
+        "period": "FEV/2024 - ABR/2024",
         "image": "neoris.jpeg",
         "description":"Participei de um projeto para as lojas de conveniência Br Mania da Vibra energia, para gestão de estoque das lojas, que envolvia a migração de tecnologia de aplicação Angular para React.  O time era composto por 4 desenvolvedores e 1 analista de qualidade.\n O projeto nesse período teve evoluções no front e back e suas principais tecnologias eram NestJS, Prisma, Postgres, React.Atividades incluíam documentação do desenvolvimento das features, execução e implementação de testes, levantamento e refino de requisitos, gerenciar pacotes de entrega.",
+      },
+      {
+        "id": "10",
+        "locale":"Make Consultores",
+        "function": "Desenvolvedor Full Stack",
+        "period": "OUT/2025 - MOMENTO",
+        "image": "make.png",
+        "description":"Responsável pela coordenação de squad de desenvolvimento, assegurando a agilidade nas entregas e a excelência técnica na manutenção e evolução dos sistemas internos críticos.",
       }
     ];
   },
@@ -116,8 +124,15 @@ export const service = {
         "id": "9",
         "locale":"Neoris",
         "function": "Fullstack Developer",
-        "period": "FEV/2018 - ABR/2024",
+        "period": "FEV/2024 - ABR/2024",
         "image": "neoris.jpeg",
+      },
+      {
+        "id": "10",
+        "locale":"Make Consultores",
+        "function": "Desenvolvedor Full Stack",
+        "period": "OUT/2025 - MOMENTO",
+        "image": "make.png",
       }
     ];
   },
@@ -167,9 +182,17 @@ export const service = {
         "id": "9",
         "locale":"Neoris",
         "function": "Fullstack Developer",
-        "period": "FEV/2018 - ABR/2024",
+        "period": "FEV/2024 - ABR/2024",
         "image": "neoris.jpeg",
         "description":"Participei de um projeto para as lojas de conveniência Br Mania da Vibra energia, para gestão de estoque das lojas, que envolvia a migração de tecnologia de aplicação Angular para React.  O time era composto por 4 desenvolvedores e 1 analista de qualidade.\n O projeto nesse período teve evoluções no front e back e suas principais tecnologias eram NestJS, Prisma, Postgres, React.Atividades incluíam documentação do desenvolvimento das features, execução e implementação de testes, levantamento e refino de requisitos, gerenciar pacotes de entrega.",
+      },
+      {
+        "id": "10",
+        "locale":"Make Consultores",
+        "function": "Desenvolvedor Full Stack",
+        "period": "OUT/2025 - MOMENTO",
+        "image": "make.png",
+        "description":"Responsável pela coordenação de squad de desenvolvimento, assegurando a agilidade nas entregas e a excelência técnica na manutenção e evolução dos sistemas internos críticos.",
       }
     ];
   },
