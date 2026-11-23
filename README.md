@@ -1,4 +1,4 @@
-# Arthur Rocha Reis
+# Arthur Reis
 
 Portfólio profissional em React e Vite, em português.
 
