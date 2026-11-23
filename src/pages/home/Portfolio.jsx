@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Activity, ArrowDown, ArrowUp, ArrowUpRight, Braces, ChevronDown, GitBranch, Layers3, Terminal } from 'lucide-react';
+import { Activity, ArrowDown, ArrowUp, ArrowUpRight, ChevronDown, ChevronRight, Database, FileText, GitBranch, Layers3, Monitor, Network, Terminal } from 'lucide-react';
 import '@fontsource-variable/dm-sans';
 import portrait from '../../assets/images/arthur.reis-profile.jpeg';
 import { deliveries, earlierExperience, experiences, skills } from './content';
@@ -8,6 +8,7 @@ import './portfolio.css';
 const linkedin = 'https://www.linkedin.com/in/arthur-reis/';
 const github = 'https://github.com/arthreis';
 const deliveryIcons = [Layers3, GitBranch, Activity];
+const skillIcons = [Monitor, Network, Database, Activity];
 const navigation = [
   ['entregas', 'Entregas'],
   ['trajetoria', 'Trajetória'],
@@ -26,6 +27,106 @@ function SectionTitle({ id, index, label, title, intro }) {
 
 function Tags({ items }) {
   return <ul className="tags">{items.map(item => <li key={item}>{item}</li>)}</ul>;
+}
+
+function DeliveryPipeline() {
+  const controls = useRef(null);
+  const [stage, setStage] = useState(0);
+  const [cycle, setCycle] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  const [inView, setInView] = useState(false);
+  const [pageVisible, setPageVisible] = useState(() => !document.hidden);
+  const item = deliveries[stage];
+  const running = !reducedMotion && inView && pageVisible;
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), { threshold: 1, rootMargin: '-104px 0px 0px' });
+    observer.observe(controls.current);
+    const onVisibility = () => setPageVisible(!document.hidden);
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const onMotion = event => setReducedMotion(event.matches);
+    document.addEventListener('visibilitychange', onVisibility);
+    motion.addEventListener('change', onMotion);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', onVisibility);
+      motion.removeEventListener('change', onMotion);
+    };
+  }, []);
+
+  function selectStage(index) {
+    setStage(index);
+    setCycle(value => value + 1);
+  }
+
+  return (
+    <div className="delivery-pipeline" data-reveal data-running={running}>
+      <div ref={controls} className="pipeline-stages" role="group" aria-label="Etapas do pipeline de engenharia">
+        {deliveries.map(({ stage: name }, index) => {
+          const Icon = deliveryIcons[index];
+          return (
+            <div className="pipeline-step" key={name}>
+              <button type="button" aria-pressed={stage === index} aria-controls="pipeline-detail" onClick={() => selectStage(index)}>
+                <Icon size={19} aria-hidden="true" />
+                <span>{name}</span>
+                {stage === index && !reducedMotion && (
+                  <span className="pipeline-timer" aria-hidden="true">
+                    <span key={cycle} onAnimationEnd={() => selectStage((stage + 1) % deliveries.length)} />
+                  </span>
+                )}
+              </button>
+              {index < deliveries.length - 1 && <ChevronRight className="pipeline-arrow" size={15} aria-hidden="true" />}
+            </div>
+          );
+        })}
+      </div>
+      <div id="pipeline-detail" className="pipeline-detail" aria-live={running ? 'off' : 'polite'} aria-atomic="true">
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+        <dl className="pipeline-notes">
+          <div><dt>Problema</dt><dd>{item.problem}</dd></div>
+          <div><dt>Decisão</dt><dd>{item.decision}</dd></div>
+          <div><dt>O que foi entregue</dt><dd>{item.outcome}</dd></div>
+        </dl>
+        <Tags items={item.tags} />
+      </div>
+    </div>
+  );
+}
+
+function SkillsMap() {
+  const [activeLayer, selectLayer] = useState(0);
+  const item = skills[activeLayer];
+
+  return (
+    <div className="skills-map" data-reveal>
+      <div className="architecture-layers" role="group" aria-label="Camadas do mapa de competências">
+        {skills.map(({ label }, index) => {
+          const Icon = skillIcons[index];
+          return (
+            <div className={index === skills.length - 1 ? 'architecture-platform' : 'architecture-node'} key={label}>
+              <button type="button" aria-pressed={activeLayer === index} aria-controls="architecture-detail" onClick={() => selectLayer(index)}>
+                <Icon size={19} aria-hidden="true" />
+                <span>{label}</span>
+              </button>
+              {index < skills.length - 2 && <ChevronRight className="architecture-arrow" size={17} aria-hidden="true" />}
+            </div>
+          );
+        })}
+      </div>
+      <div id="architecture-detail" className="architecture-detail" aria-live="polite" aria-atomic="true">
+        <div>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+          <Tags items={item.items} />
+        </div>
+        <div className="architecture-example">
+          <h4>Na prática</h4>
+          <p>{item.example}</p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default function Portfolio() {
@@ -114,13 +215,13 @@ export default function Portfolio() {
       <main id="conteudo" tabIndex={-1}>
         <section className="hero" aria-labelledby="hero-title">
           <div className="frame hero-content">
-            <p className="eyebrow hero-label">Engenharia de software <span aria-hidden="true">/</span> Liderança técnica</p>
+            <p className="eyebrow hero-label">Engenharia de software <span aria-hidden="true">·</span> Liderança técnica</p>
             <h1 id="hero-title">Arthur <em>Reis</em></h1>
-            <p className="hero-subtitle">Desenvolvimento full stack, integrações e operação de software.</p>
-            <p className="hero-context">Responsável pela equipe de TI na Make Consultores, com atuação em tecnologia para comércio exterior.</p>
+            <p className="hero-subtitle">Desenvolvo aplicações e integrações para comércio exterior.</p>
+            <p className="hero-context">Na Make Consultores, lidero a equipe de TI e atuo do desenvolvimento à operação em produção.</p>
             <div className="hero-actions">
               <a className="action primary" href="#entregas">Ver entregas <ArrowDown size={17} aria-hidden="true" /></a>
-              <a className="action secondary" href={github}><Braces size={17} aria-hidden="true" /> GitHub <ArrowUpRight size={16} aria-hidden="true" /></a>
+              <a className="action secondary" href="#trajetoria"><GitBranch size={17} aria-hidden="true" /> Ver trajetória</a>
             </div>
           </div>
         </section>
@@ -128,19 +229,7 @@ export default function Portfolio() {
         <section className="section frame" id="entregas" aria-labelledby="entregas-titulo">
           <SectionTitle id="entregas-titulo" index="01" label="Entregas" title="Engenharia na prática"
             intro="Trabalho que conecta desenvolvimento, entrega e operação na Make Consultores." />
-          <div className="deliveries">
-            {deliveries.map((item, index) => {
-              const Icon = deliveryIcons[index];
-              return (
-                <article className="delivery" key={item.title} data-reveal>
-                  <div className="delivery-marker"><Icon size={23} strokeWidth={1.6} aria-hidden="true" /><span aria-hidden="true">0{index + 1}</span></div>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                  <Tags items={item.tags} />
-                </article>
-              );
-            })}
-          </div>
+          <DeliveryPipeline />
         </section>
 
         <section className="section trajectory" id="trajetoria" aria-labelledby="trajetoria-titulo">
@@ -194,13 +283,8 @@ export default function Portfolio() {
 
         <section className="section frame" id="competencias" aria-labelledby="competencias-titulo">
           <SectionTitle id="competencias-titulo" index="03" label="Competências" title="Competências técnicas"
-            intro="Ferramentas e práticas aplicadas em projetos de software." />
-          <dl className="skill-list">
-            {skills.map(item => <div key={item.label} data-reveal>
-              <dt>{item.label}</dt>
-              <dd><Tags items={item.items} /></dd>
-            </div>)}
-          </dl>
+            intro="Como minhas competências se conectam, da interface à operação." />
+          <SkillsMap />
           <div className="education">
             <p className="eyebrow section-index">Formação acadêmica</p>
             <h3>Análise e Desenvolvimento de Sistemas</h3>
@@ -210,17 +294,23 @@ export default function Portfolio() {
       </main>
 
       <footer className="contact" id="contato">
-        <div className="frame contact-layout">
-          <img className="portrait" src={portrait} width="112" height="112" loading="lazy" alt="Arthur Reis" />
-          <div>
+        <div className="frame">
+          <div className="contact-heading">
             <p className="eyebrow">Contato</p>
-            <h2>Arthur Reis</h2>
-            <p>Rio de Janeiro, Brasil</p>
+            <span className="contact-handle"><FileText size={15} aria-hidden="true" /><code>@arthreis</code></span>
           </div>
-          <div className="contact-links">
-            <a href={linkedin}>LinkedIn <ArrowUpRight size={18} aria-hidden="true" /></a>
-            <a href={github}>GitHub <ArrowUpRight size={18} aria-hidden="true" /></a>
-            <a className="back-top" href="#inicio" aria-label="Voltar ao topo" title="Voltar ao topo"><ArrowUp size={17} aria-hidden="true" /></a>
+          <div className="contact-layout">
+            <img className="portrait" src={portrait} width="112" height="112" loading="lazy" alt="Arthur Reis" />
+            <div className="contact-identity">
+              <h2>Arthur Reis</h2>
+              <p>Desenvolvimento full stack, integrações e liderança técnica.</p>
+              <p className="contact-location">Rio de Janeiro, Brasil</p>
+            </div>
+            <div className="contact-links">
+              <a className="action primary" href={linkedin}>LinkedIn <ArrowUpRight size={17} aria-hidden="true" /></a>
+              <a className="action secondary" href={github}>GitHub <ArrowUpRight size={17} aria-hidden="true" /></a>
+              <a className="back-top" href="#inicio" aria-label="Voltar ao topo" title="Voltar ao topo"><ArrowUp size={17} aria-hidden="true" /></a>
+            </div>
           </div>
         </div>
       </footer>

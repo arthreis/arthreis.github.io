@@ -1,17 +1,29 @@
 export const deliveries = [
   {
+    stage: 'Padronizar',
     title: 'Padrões para o time de TI',
     description: 'Estruturei o inventário de aplicações e serviços e organizei guias e runbooks. O time ganhou uma referência comum para desenvolvimento, publicação, diagnóstico e recuperação.',
+    problem: 'As informações sobre serviços e procedimentos estavam dispersas, o que dificultava encontrar a origem de uma aplicação ou saber como operá-la.',
+    decision: 'Organizar o inventário e reunir os procedimentos recorrentes em guias e runbooks.',
+    outcome: 'Inventário de aplicações e serviços e orientações para desenvolver, publicar, diagnosticar e recuperar aplicações.',
     tags: ['Liderança técnica', 'Documentação'],
   },
   {
+    stage: 'Entregar',
     title: 'CI/CD com imagens versionadas',
     description: 'Conduzi pilotos que separam build, publicação e deploy. A mesma imagem validada pode ser promovida sem reconstrução em produção, com validação pós-deploy e procedimento de retorno.',
+    problem: 'Construir imagens no servidor de produção disputava recursos com aplicações em execução e dificultava rastrear a versão publicada.',
+    decision: 'Separar build e deploy para promover a mesma imagem versionada, sem reconstruí-la em produção.',
+    outcome: 'Pilotos com GitHub Actions, Docker e GHCR, com verificação após o deploy e procedimento de rollback.',
     tags: ['GitHub Actions', 'Docker', 'GHCR'],
   },
   {
+    stage: 'Operar',
     title: 'Observabilidade em produção',
     description: 'Evoluí o monitoramento com alertas que identificam o serviço afetado, trazem contexto para diagnóstico e sinalizam quando o problema foi resolvido.',
+    problem: 'Os alertas nem sempre deixavam claro qual serviço investigar ou quando a condição tinha voltado ao normal.',
+    decision: 'Levar ao Teams alertas com identificação do serviço, contexto de diagnóstico e aviso de recuperação.',
+    outcome: 'Alertas de produção com Prometheus e Alertmanager, notificações no Teams e runbooks para orientar a investigação.',
     tags: ['Prometheus', 'Alertmanager', 'Teams'],
   },
 ];
@@ -69,8 +81,32 @@ export const earlierExperience = [
 ];
 
 export const skills = [
-  { label: 'Backend e integração', items: ['Java / Spring', 'Node.js / NestJS', 'APIs REST', 'Mensageria'] },
-  { label: 'Frontend e mobile', items: ['React', 'Angular', 'React Native', 'Microfrontends'] },
-  { label: 'Dados', items: ['PostgreSQL', 'Oracle', 'Redis', 'Prisma / Hibernate'] },
-  { label: 'Entrega e operação', items: ['GitHub Actions', 'Docker', 'Prometheus', 'Runbooks e rollback'] },
+  {
+    label: 'Interface',
+    title: 'Frontend e mobile',
+    description: 'Telas web e mobile que conectam usuários aos fluxos do sistema.',
+    example: 'Na NEORIS, participei da migração de Angular para React no sistema de gestão de estoque da BR Mania. Na Foursys, desenvolvi telas e microfrontends para o app do Bradesco.',
+    items: ['React', 'Angular', 'React Native', 'Microfrontends'],
+  },
+  {
+    label: 'APIs e integrações',
+    title: 'Backend e integração entre sistemas',
+    description: 'APIs e mensageria para compartilhar dados e automatizar processos entre aplicações.',
+    example: 'Na V.tal, participei da implementação de gateways para APIs externas e do PortalDEV, voltado à documentação com Swagger e ao versionamento.',
+    items: ['Java / Spring', 'Node.js / NestJS', 'APIs REST', 'Mensageria'],
+  },
+  {
+    label: 'Dados',
+    title: 'Persistência e cache',
+    description: 'PostgreSQL e Oracle para persistência relacional; Redis para cache e acesso rápido a dados.',
+    example: 'Na NEORIS, contribuí para o backend do sistema de estoque da BR Mania, que usava Prisma e PostgreSQL.',
+    items: ['PostgreSQL', 'Oracle', 'Redis', 'Prisma / Hibernate'],
+  },
+  {
+    label: 'Entrega e operação',
+    title: 'Publicação, monitoramento e recuperação',
+    description: 'Práticas que atravessam as camadas: publicar versões rastreáveis, acompanhar a saúde do sistema e recuperar serviços.',
+    example: 'Na Make, conduzi pilotos de CI/CD com imagens versionadas e evoluí os alertas de produção com contexto para diagnóstico e aviso de recuperação.',
+    items: ['GitHub Actions', 'Docker', 'Prometheus', 'Runbooks e rollback'],
+  },
 ];
