@@ -1,15 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import Portfolio from './pages/home/Portfolio';
 
-import Routes from './routes';
-import GlobalStyle from './styles/global';
-
-function App() {
-  return (
-    <Fragment>
-      <GlobalStyle />
-      <Routes />
-    </Fragment>
-  );
+export default function App() {
+  return <Portfolio />;
 }
-
-export default App;
