@@ -217,8 +217,8 @@ export default function Portfolio() {
           <div className="frame hero-content">
             <p className="eyebrow hero-label">Engenharia de software <span aria-hidden="true">·</span> Liderança técnica</p>
             <h1 id="hero-title">Arthur <em>Reis</em></h1>
-            <p className="hero-subtitle">Desenvolvo aplicações e integrações para comércio exterior.</p>
-            <p className="hero-context">Na Make Consultores, lidero a equipe de TI e atuo do desenvolvimento à operação em produção.</p>
+            <p className="hero-subtitle">Desenvolvo software para conectar sistemas e simplificar processos.</p>
+            <p className="hero-context">Na Make Consultores, lidero a equipe de TI e trabalho com o time para evoluir sistemas e melhorar a forma como publicamos, monitoramos e operamos software.</p>
             <div className="hero-actions">
               <a className="action primary" href="#entregas">Ver entregas <ArrowDown size={17} aria-hidden="true" /></a>
               <a className="action secondary" href="#trajetoria"><GitBranch size={17} aria-hidden="true" /> Ver trajetória</a>
